@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.review.controllers.ItemListController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="tiki_button" onMousePressed="#tiki_button_press" styleClass="button-brands">
+               <children>
+                  <VBox alignment="CENTER" layoutX="39.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/tiki.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label text="Tiki">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="sendo_button" onMousePressed="#sendo_button_press" styleClass="button-brands">
+               <children>
+                  <VBox alignment="CENTER" layoutX="39.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/sendo.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Sendo">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ebay_button" onMousePressed="#ebay_button_press" styleClass="button-brands">
+               <children>
+                  <VBox alignment="CENTER" layoutX="39.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/ebay.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Shopee">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="lazada_button" onMousePressed="#lazada_button_press" styleClass="button-brands">
+               <children>
+                  <VBox alignment="CENTER" layoutX="39.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/lazada.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Lazada">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="423.0" prefWidth="1500.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <ScrollPane fx:id="product_list_scroll" minViewportHeight="500.0" prefHeight="602.0" prefWidth="1100.0" style="-fx-background-color: white;" styleClass="transparent">
+               <content>
+                  <GridPane fx:id="product_list_grid" alignment="CENTER" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: white;" styleClass="transparent">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="78.0" prefWidth="1500.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="575.0" layoutY="22.0" prefHeight="40.0" prefWidth="346.0" visible="false">
+               <children>
+                  <FontAwesomeIconView glyphName="CHEVRON_LEFT" onMousePressed="#pagination_left_press" styleClass="button-pagination-arrow" />
+                  <HBox fx:id="pagination_list" alignment="CENTER" prefHeight="36.0" prefWidth="278.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="1">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="button-pagination" />
+                              <String fx:value="button-pagination-action" />
+                           </styleClass>
+                        </Button>
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <FontAwesomeIconView glyphName="CHEVRON_RIGHT" onMousePressed="#pagination_right_press" styleClass="button-pagination-arrow" />
+               </children>
+               <styleClass>
+                  <String fx:value="shadow2" />
+                  <String fx:value="pagination" />
+               </styleClass>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

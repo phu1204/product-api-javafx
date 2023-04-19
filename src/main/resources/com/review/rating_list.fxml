@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="498.0" prefWidth="500.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.review.controllers.RatingListController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="745.0" spacing="5.0">
+         <children>
+            <FontAwesomeIconView fill="#ffc300" glyphName="STAR" selectionFill="#fbff00" size="24">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </FontAwesomeIconView>
+            <Label fx:id="rating_detail_product" text="4.8">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="count_rating_product" text="10 đánh giá">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="437.0" prefWidth="745.0">
+         <children>
+            <ScrollPane fx:id="rating_scroll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minViewportHeight="450.0" minViewportWidth="530.0" minWidth="-Infinity" prefHeight="450.0" prefWidth="530.0">
+               <content>
+                  <GridPane fx:id="rating_grid" alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="59.0" prefWidth="615.0" visible="false">
+         <children>
+            <HBox alignment="CENTER" layoutX="77.0" layoutY="8.0" prefHeight="40.0" prefWidth="346.0">
+               <children>
+                  <FontAwesomeIconView glyphName="CHEVRON_LEFT" onMousePressed="#pagination_left_press" styleClass="button-pagination-arrow" />
+                  <HBox fx:id="pagination_list" alignment="CENTER" prefHeight="36.0" prefWidth="278.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                        <Button mnemonicParsing="false" styleClass="button-pagination" text="1" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <FontAwesomeIconView glyphName="CHEVRON_RIGHT" onMousePressed="#pagination_right_press" styleClass="button-pagination-arrow" />
+               </children>
+               <styleClass>
+                  <String fx:value="shadow2" />
+                  <String fx:value="pagination" />
+               </styleClass>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
